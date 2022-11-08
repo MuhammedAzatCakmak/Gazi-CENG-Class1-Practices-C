@@ -3,7 +3,7 @@
 int main(){
 
 int sayi,son;
-printf("\nbir sayi giriniz: ");
+
 scanf("%d",&sayi);
 
 son = sayi%9;
