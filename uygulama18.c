@@ -9,68 +9,71 @@ Numara   :  22181616055
 
 #include<stdio.h>
 #include<stdlib.h>
+#define SAT 5
+#define SUT 4
 
 
-int matris()
+int matris_yazdir(short matris[SAT][SUT])
 {
-    int matris1[5][4];
-    int matris2[5][4]; 
-    int toplam[5][4];
-    char i,j;
-
-
-printf("\n\n");          
-printf("*****MATRiS 1*****");
-printf("\n");
-
-
-    for(i=0;i<5;i++)
+    for(int i = 0 ; i < SAT ; i++)
+    {
+        for (int j = 0 ; j < SUT ; j++)
         {
-            for(j=0;j<4;j++)
-            {
-                matris1[i][j] = rand()%100+1;
-                printf("%d\t",matris1[i][j]);
-            }
-            printf("\n");
+            printf("%d\t",matris[i][j]);
         }
+        printf("\n");
+    }
 
-
-printf("\n\n\n");           
-printf("*****MATRiS 2*****");
-printf("\n");        
-
-
-    for(i=0;i<5;i++)
-        {
-            for(j=0;j<4;j++)
-            {
-                matris2[i][j] = rand()%100+1;
-                printf("%d\t",matris2[i][j]);      
-            }
-            printf("\n");
-        }
-
-printf("\n\n\n");
-printf("*****MATRiSLERiN TOPLAMI*****");
-printf("\n");
-
-
-        for(i=0;i<5;i++)
-         {
-             for(j=0;j<4;j++)
-             {
-               toplam[i][j] = matris1[i][j] + matris2[i][j];
-               printf("%d\t",toplam[i][j]);
-             }
-                  printf("\n"); 
-         }
-
-         return toplam[i][j];
-
+    return matris[SAT][SUT];
 }
-
 
 int main()
 {
-    matris();   
-}
+    short matrisA[SAT][SUT] , matrisB[SAT][SUT] , matrisT[SAT][SUT];
+
+    rand()%100;
+
+    for(int i = 0 ; i < SAT ; i++)
+        {
+            for (int j = 0 ; j < SUT ; j++)
+            {
+                matrisA[i][j] = rand()%100;
+            }
+
+        }
+
+
+        for(int i = 0 ; i < SAT ; i++)
+        {
+            for (int j = 0 ; j < SUT ; j++)
+            {
+                matrisB[i][j] = rand()%100;
+            }
+
+        }
+        
+        printf("\n\n***MATRIS A***\n");
+        matris_yazdir(matrisA);
+        printf("\n");
+        printf("\n***MATRIS B***\n");
+        matris_yazdir(matrisB);
+        printf("\n");
+
+
+        for(int i = 0 ; i < SAT ; i++)
+        {
+            for (int j = 0 ; j < SUT ; j++)
+            {
+                matrisT[i][j] = matrisA[i][j] + matrisB[i][j];
+            }
+
+        }
+
+
+        printf("\n***MATRISLERIN TOPLAMI***\n");
+        matris_yazdir(matrisT);
+        return 0;
+
+}        
+
+
