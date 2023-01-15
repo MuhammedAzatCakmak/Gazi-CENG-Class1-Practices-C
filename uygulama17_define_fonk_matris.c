@@ -6,7 +6,6 @@ Numara   :  22181616055
 */
 
 
-
 #include<stdio.h>
 #include<stdlib.h>
 #define SAT 5
@@ -31,8 +30,6 @@ int main()
 {
     short matrisA[SAT][SUT] , matrisB[SAT][SUT] , matrisT[SAT][SUT];
 
-    rand()%100;
-
     for(int i = 0 ; i < SAT ; i++)
         {
             for (int j = 0 ; j < SUT ; j++)
@@ -41,7 +38,6 @@ int main()
             }
 
         }
-
 
         for(int i = 0 ; i < SAT ; i++)
         {
@@ -75,5 +71,3 @@ int main()
         return 0;
 
 }        
-
-
